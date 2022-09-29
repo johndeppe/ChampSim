@@ -4,12 +4,9 @@
  * Multiperspective Reuse Predictor
  * 
  */
-#ifdef CACHE
-#include "./champsim_crc2.h"
-#else
-//#include "../inc/champsim_crc2.h"
-#include "champsim_crc2.h"
-#endif
+
+#include "champsim.h"
+#include "cache.h"
 
 #include <string.h>
 #include <stdlib.h>
@@ -96,15 +93,16 @@ int Get_Sampler_Victim ( uint32_t tid, uint32_t setIndex, const BLOCK *current_s
 // find replacement victim
 // return value should be 0 ~ 15 or 16 (bypass)
 
-uint32_t GetVictimInSet (uint32_t cpu, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type) {
+uint32_t CACHE::find_victim(uint32_t cpu, uint64_t instr_id, uint32_t set, const BLOCK *current_set, uint64_t PC, uint64_t paddr, uint32_t type) {
 	return Get_Sampler_Victim (cpu, set, current_set, LLC_WAYS, PC, paddr, type);
 }
+
 
 // use this function to print out your own stats on every heartbeat 
 void PrintStats_Heartbeat() { }
 
 // use this function to print out your own stats at the end of simulation
-void PrintStats() { }
+void CACHE::replacement_final_stats() {}
 
 static int 
 	lognsets6, // log_2 number of sets plus 6
@@ -178,7 +176,8 @@ static int
 
 void UpdateSampler (uint32_t setIndex, uint64_t tag, uint32_t tid, uint64_t PC, int32_t way, bool hit, uint32_t accessType, uint64_t paddr);
 
-void UpdateReplacementState (uint32_t cpu, uint32_t set, uint32_t way, uint64_t paddr, uint64_t PC, uint64_t victim_addr, uint32_t type, uint8_t hit) {
+
+void CACHE::update_replacement_state(uint32_t cpu, uint32_t set, uint32_t way, uint64_t paddr, uint64_t PC, uint64_t victim_addr, uint32_t type, uint8_t hit) {
 	if (hit && (type == WRITEBACK)) return;
 	uint64_t tag = paddr / (llc_sets * 64);
 	UpdateSampler (set, tag, cpu, PC, way, hit, type, paddr);
@@ -439,8 +438,8 @@ void set_parameters (void) {
 
 // initialize replacement state
 
-void InitReplacementState() {
-	config = get_config_number ();
+void CACHE::initialize_replacement() {
+	config = 2;
 	switch (config) {
 		case 1: case 2:
 			num_core = 1;
