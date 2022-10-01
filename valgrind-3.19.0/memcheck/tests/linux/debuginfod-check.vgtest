@@ -1,0 +1,4 @@
+prereq: ./debuginfod-check.pl
+prog: debuginfod-check
+vgopts: -q
+env: DEBUGINFOD_URLS=localhost DEBUGINFOD_CACHE_PATH=/home/jhwoo36/courses/cpsc508/assignment1/valgrind-3.19.0/memcheck/tests/linux/.debuginfod

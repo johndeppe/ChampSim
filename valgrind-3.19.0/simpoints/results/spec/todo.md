@@ -1,0 +1,1 @@
+1. Create scripts to collect all of ther data from each benchmarks
