@@ -1,0 +1,86 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 200000000
+Simulation Instructions: 1000000000
+Number of CPUs: 1
+Off-chip DRAM Size: 4 GiB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+VirtualMemory physical capacity: 8588881920 num_ppages: 2096895
+VirtualMemory page size: 4096 log2_page_size: 12
+
+CPU 0 runs tracer/pin/traces/xs-64nuclidexl-2.champsim.xz
+Basic BTB sets: 1024 ways: 8 indirect buffer size: 4096 RAS size: 64
+cpu0_L1D next line prefetcher
+cpu0_L2C IP-based stride prefetcher
+config 1, num_core 1, llc_sets 2048
+WARNING: The extended signature CACHE::prefetch_line(ip, base_addr, pf_addr, fill_this_level, prefetch_metadata) is deprecated.
+WARNING: Use CACHE::prefetch_line(pf_addr, fill_this_level, prefetch_metadata) instead.
+DEADLOCK! CPU 0 cycle 1052057
+IFETCH_BUFFER head instr_id: 207742 translated: 2 fetched: 2 scheduled: 0 executed: 0 is_memory: 0 num_reg_dependent: 0 event: 1052056
+ROB head instr_id: 207550 translated: 2 fetched: 2 scheduled: 2 executed: 1 is_memory: 1 num_reg_dependent: 0 event: 52057
+Load Queue Entry
+[LQ] entry: 0 instr_id: 207563 address: 19cb0dfa0 translated: 2 fetched: 1
+[LQ] entry: 1 instr_id: 207550 address: 12c6fc3d0 translated: 2 fetched: 1
+[LQ] entry: 2 instr_id: 207575 address: 1dab421a0 translated: 2 fetched: 1
+[LQ] entry: 3 instr_id: 207588 address: 1d370f0a0 translated: 2 fetched: 1
+[LQ] entry: 4 instr_id: 207601 address: 9b0a3820 translated: 2 fetched: 1
+[LQ] entry: 5 instr_id: 207614 address: 0 translated: 1 fetched: 0
+[LQ] entry: 6 instr_id: 207626 address: 0 translated: 1 fetched: 0
+[LQ] entry: 7 instr_id: 207638 address: 0 translated: 1 fetched: 0
+[LQ] entry: 8 instr_id: 207651 address: 0 translated: 1 fetched: 0
+[LQ] entry: 9 instr_id: 207663 address: 0 translated: 1 fetched: 0
+[LQ] entry: 10 instr_id: 207675 address: 0 translated: 1 fetched: 0
+
+Store Queue Entry
+
+LLC MSHR empty
+
+cpu0_L2C MSHR Entry
+[cpu0_L2C MSHR] entry: 0 instr_id: 0 address: 4958807 full_addr: 1256201d0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 1 instr_id: 0 address: 2fa0006 full_addr: be800190 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 2 instr_id: 0 address: 69e830f full_addr: 1a7a0c3c0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 3 instr_id: 0 address: 63a2c0d full_addr: 18e8b0360 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 4 instr_id: 0 address: 77c09e6 full_addr: 1df0279a0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 5 instr_id: 0 address: 154c30f full_addr: 5530c3f0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 6 instr_id: 0 address: 1d0ac68 full_addr: 742b1a00 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L2C MSHR] entry: 7 instr_id: 0 address: 194a2e5 full_addr: 6528b950 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+
+cpu0_L1D MSHR Entry
+[cpu0_L1D MSHR] entry: 0 instr_id: 0 address: 2fa0006 full_addr: be800190 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 1 instr_id: 0 address: 77c09e6 full_addr: 1df0279a0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 2 instr_id: 0 address: 154c30f full_addr: 5530c3f0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 3 instr_id: 0 address: 63a2c0d full_addr: 18e8b0360 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 4 instr_id: 0 address: 69e830f full_addr: 1a7a0c3c0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 5 instr_id: 0 address: 1d0ac68 full_addr: 742b1a00 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 6 instr_id: 0 address: 4958807 full_addr: 1256201d0 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_L1D MSHR] entry: 7 instr_id: 0 address: 194a2e5 full_addr: 6528b950 type: 2 fill_level: 4 event_cycle: 18446744073709551615
+
+cpu0_PTW MSHR Entry
+[cpu0_PTW MSHR] entry: 0 instr_id: 207614 address: df862d58 v_address: 357e63e0 type: 0 translation_level: 0 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_PTW MSHR] entry: 1 instr_id: 207626 address: df862d58 v_address: 357d0600 type: 0 translation_level: 0 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_PTW MSHR] entry: 2 instr_id: 207638 address: df862d58 v_address: 357c5710 type: 0 translation_level: 0 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_PTW MSHR] entry: 3 instr_id: 207651 address: df862d58 v_address: 357cae70 type: 0 translation_level: 0 fill_level: 4 event_cycle: 18446744073709551615
+[cpu0_PTW MSHR] entry: 4 instr_id: 207663 address: df862d58 v_address: 357c82c0 type: 0 translation_level: 0 fill_level: 4 event_cycle: 18446744073709551615
+
+cpu0_STLB MSHR Entry
+[cpu0_STLB MSHR] entry: 0 instr_id: 207614 address: d5f98f full_addr: 357e63e0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_STLB MSHR] entry: 1 instr_id: 207626 address: d5f418 full_addr: 357d0600 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_STLB MSHR] entry: 2 instr_id: 207638 address: d5f15c full_addr: 357c5710 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_STLB MSHR] entry: 3 instr_id: 207651 address: d5f2b9 full_addr: 357cae70 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_STLB MSHR] entry: 4 instr_id: 207663 address: d5f20b full_addr: 357c82c0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_STLB MSHR] entry: 5 instr_id: 207675 address: d5f1b3 full_addr: 357c6cd0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+
+cpu0_L1I MSHR empty
+
+cpu0_ITLB MSHR empty
+
+cpu0_DTLB MSHR Entry
+[cpu0_DTLB MSHR] entry: 0 instr_id: 207614 address: d5f98f full_addr: 357e63e0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_DTLB MSHR] entry: 1 instr_id: 207626 address: d5f418 full_addr: 357d0600 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_DTLB MSHR] entry: 2 instr_id: 207638 address: d5f15c full_addr: 357c5710 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_DTLB MSHR] entry: 3 instr_id: 207651 address: d5f2b9 full_addr: 357cae70 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_DTLB MSHR] entry: 4 instr_id: 207663 address: d5f20b full_addr: 357c82c0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+[cpu0_DTLB MSHR] entry: 5 instr_id: 207675 address: d5f1b3 full_addr: 357c6cd0 type: 0 fill_level: 1 event_cycle: 18446744073709551615
+
+
